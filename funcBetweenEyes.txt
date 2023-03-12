@@ -1,0 +1,38 @@
+
+void __thiscall FUN_007c6c20(void *this,undefined4 *param_1)
+
+{
+  undefined4 *puVar1;
+  int iVar2;
+  int iVar3;
+  
+  puVar1 = *(undefined4 **)((int)this + 4);
+                    /* WARNING: Load size is inaccurate */
+  if ((param_1 < puVar1) && (*this <= param_1)) {
+    iVar3 = (int)param_1 - (int)*this >> 3;
+    if (puVar1 == *(undefined4 **)((int)this + 8)) {
+      FUN_007dadd0(this,1);
+    }
+    puVar1 = *(undefined4 **)((int)this + 4);
+    if (puVar1 != (undefined4 *)0x0) {
+                    /* WARNING: Load size is inaccurate */
+      iVar2 = *this;
+      *puVar1 = *(undefined4 *)(iVar2 + iVar3 * 8);
+      puVar1[1] = *(undefined4 *)(iVar2 + 4 + iVar3 * 8);
+      *(int *)((int)this + 4) = *(int *)((int)this + 4) + 8;
+      return;
+    }
+  }
+  else {
+    if (puVar1 == *(undefined4 **)((int)this + 8)) {
+      FUN_007dadd0(this,1);
+    }
+    puVar1 = *(undefined4 **)((int)this + 4);
+    if (puVar1 != (undefined4 *)0x0) {
+      *puVar1 = *param_1;
+      puVar1[1] = param_1[1];
+    }
+  }
+  *(int *)((int)this + 4) = *(int *)((int)this + 4) + 8;
+  return;
+}

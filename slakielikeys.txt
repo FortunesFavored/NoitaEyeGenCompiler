@@ -1,0 +1,19 @@
+magic_numbers.salakieli
+KnowledgeIsTheHighestOfTheHighest            33
+WhoWouldntGiveEverythingForTrueKnowledge     40
+73
+
+player.salakieli
+WeSeeATrueSeekerOfKnowledge                  27
+YouAreSoCloseToBeingEnlightened              31
+58
+
+world_state.salakieli
+TheTruthIsThatThereIsNothing                 28
+MoreValuableThanKnowledge                    25
+53
+
+_Stats.Salakieli
+SecretsOfTheAllSeeing                        21
+ThreeEyesAreWatchingYou                      23
+44

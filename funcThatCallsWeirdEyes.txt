@@ -1,0 +1,98 @@
+
+void __fastcall FUN_005b7e20(int param_1)
+
+{
+  int iVar1;
+  bool bVar2;
+  int iVar3;
+  int iVar4;
+  int *piVar5;
+  undefined auVar6 [16];
+  double local_2c;
+  int local_20;
+  undefined4 *local_1c;
+  uint local_18;
+  int *local_14;
+  void *local_10;
+  undefined *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00c7e69c;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  local_20 = param_1;
+  if (DAT_0100f600 == (undefined4 *)0x0) {
+    local_1c = (undefined4 *)operator_new(0x198);
+    local_8 = 0;
+    if (local_1c == (undefined4 *)0x0) {
+      DAT_0100f600 = (undefined4 *)0x0;
+    }
+    else {
+      DAT_0100f600 = FUN_005cd3d0(local_1c);
+    }
+  }
+  local_8 = 0xffffffff;
+  if ((*(char *)(DAT_00ff08f0 + 0x120) == '\0') &&
+     (iVar3 = FUN_00437d00(), *(int *)(iVar3 + 0xbc) < 1)) {
+    iVar3 = FUN_00437d00();
+    piVar5 = (int *)(*(int *)(*(int *)(iVar3 + 0xc) + 0x48) + 0x50);
+    if (piVar5 != (int *)0x0) {
+      local_14 = piVar5;
+      FUN_0044a450(&local_2c);
+      FUN_00437d00();
+      auVar6 = ZEXT816((ulonglong)local_2c);
+      local_18 = 0;
+      do {
+        if ((((local_18 & 1) != 0) || (param_1 != -1)) && (((local_18 & 1) != 1 || (param_1 != 1))))
+        {
+          iVar3 = 0;
+          do {
+            iVar1 = *piVar5;
+            iVar4 = (int)SUB168(auVar6,0) * 0x41a7 + ((int)SUB168(auVar6,0) / 0x1f31d) * -0x7fffffff
+            ;
+            if (iVar4 < 1) {
+              iVar4 = iVar4 + 0x7fffffff;
+            }
+            local_1c = (undefined4 *)(int)((double)iVar4 * 4.656612875e-10 * (double)iVar1);
+            iVar4 = (int)(double)iVar4;
+            iVar4 = iVar4 * 0x41a7 + (iVar4 / 0x1f31d) * -0x7fffffff;
+            if (iVar4 < 1) {
+              iVar4 = iVar4 + 0x7fffffff;
+            }
+            local_2c = (double)iVar4;
+            auVar6 = CONCAT88((double)(int)((ulonglong)local_2c >> 0x20),local_2c);
+            iVar4 = (int)(local_2c * 4.656612875e-10 * (double)piVar5[1]);
+            if ((((-1 < (int)local_1c) && (-1 < iVar4)) && ((int)local_1c < iVar1)) &&
+               ((iVar4 < local_14[1] &&
+                (iVar1 = *(int *)(local_14[6] + (iVar1 * iVar4 + (int)local_1c) * 4), iVar1 != 0))))
+            {
+              bVar2 = FUN_0043faf0((int **)(iVar1 + 0x20),
+                                   (int *)"data/weather_gfx/background_cave_02.png");
+              if (bVar2) {
+                iVar3 = FUN_00437d00();
+                piVar5 = local_14;
+                param_1 = local_20;
+                iVar3 = *(int *)(*(int *)(iVar3 + 0xc) + 0x48);
+                weirdEyeFunc((int)((float)local_20 * 512.0 * (float)*local_14 +
+                                   (float)((double)(int)local_1c * 512.0 - *(double *)(iVar3 + 0x38)
+                                          ) + 48.0),
+                             (int)((float)((double)iVar4 * 512.0 - *(double *)(iVar3 + 0x40)) + 64.0
+                                  ),local_18);
+                auVar6 = ZEXT816((ulonglong)local_2c);
+                break;
+              }
+              auVar6 = ZEXT816((ulonglong)local_2c);
+            }
+            iVar3 = iVar3 + 1;
+            param_1 = local_20;
+            piVar5 = local_14;
+          } while (iVar3 < 1000);
+        }
+        local_18 = local_18 + 1;
+      } while ((int)local_18 < 9);
+    }
+  }
+  ExceptionList = local_10;
+  return;
+}
